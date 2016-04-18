@@ -9,11 +9,13 @@
 <script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
 $(function(){
+	// 이전 것은 .text()임
 	$("#p1").html( "<strong>가나다라마바사아자차카타라하</strong>" );
+	console.log($("#p1").html);
 });
 </script>
 </head>
 <body>
-	<p id="p1"> 이 안에 HTML를 바꿉니다.</p>
+	<p id="p1"> <em>이 안에 HTML를 바꿉니다.</em></p>
 </body>
 </html>

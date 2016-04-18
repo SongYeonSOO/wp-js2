@@ -7,6 +7,13 @@
 	$( function() {
 	
 		/* 코드를 완성하세요 */
+		
+		setTimeout(function() {
+			// DOM tree에서 element를 삭제할 때 remove를 사용한다.
+			// *** css3에서 지원해주는 content
+			// index가 1부터 시작. li중에서 3번째를 선택
+			$("li:nth-child(3), li:nth-child(5)").remove();
+		}, 2000);
 	} );  
 </script>
 </head>

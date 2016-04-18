@@ -3,34 +3,76 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-* 		{ margin: 0; padding: 0}
-body	{
+* {
+	margin: 0;
+	padding: 0
+}
+
+body {
 	font-family: "맑은 고딕";
 	font-size: 0.75em;
 	color: #333;
 }
-h1		{ width:150px; margin:10px auto }
-ul		{ width:150px; margin:20px auto 0 auto; list-style-type:none; border-top:1px solid #bbb }
-li		{ 
-	width:130; 
-	padding:10px; 
-	border-width:0 1px 1px 1px; 
-	border-style: solid; 
-	background-color:#fff; 
-	border-color: #bbb; 
-	font-weight:bold; 
-	cursor:pointer 
+
+h1 {
+	width: 150px;
+	margin: 10px auto
 }
-li.on	{ background-color:#287FC2; color:#fff }		
+
+ul {
+	width: 150px;
+	margin: 20px auto 0 auto;
+	list-style-type: none;
+	border-top: 1px solid #bbb
+}
+
+li {
+	width: 130;
+	padding: 10px;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	background-color: #fff;
+	border-color: #bbb;
+	font-weight: bold;
+	cursor: pointer
+}
+
+li.on	{
+	background-color: #287FC2;
+	color: #fff
+}
 
 </style>
+<!-- (위!!!) on이라는 class로 만들어서 바로 적용할 수 있도록하면 css는 publisher가 바로 처리할 수 있음 . 효율적-->
 <script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
-	$( function() {
-			
+	$(function() {
+
 		/* 코드를 완성하세요 */
-		
-	} );  
+		//jquery에서는 document.~~~가 아니라 function 이용
+		$("li").mouseover(function() {
+			// this가 jquery object가 아니라 LI_HTML_Element object이다
+			// -> this.css() 사용불가능 -> wrapping하자!!!
+			//console.log(this);
+
+			// LI_HTML_Element object(=this)를 jQuery Object Wrap한다
+			//HTML ELE를 직접 사용하는게 아니라 Wrapping을 해서 jQuery API를 사용함
+			var $li = $(this);
+			//5개 모두한테 setting이 되어있지만, 한번에 하나씩 쓰기 때문에 상관무
+			//하나의 함수를 여러개 mapping
+
+			/* 			$li.css({
+			 "backgroundColor":"#286fc2",
+			 "color":"#fff"
+			 });
+			 */
+			//class화해서 한번에 하자!
+			$li.addClass("on");
+		}).mouseout(function(){
+			$(this).removeClass("on");
+		});
+
+	});
 </script>
 </head>
 <body>
@@ -43,6 +85,6 @@ li.on	{ background-color:#287FC2; color:#fff }
 		<li>아이템4</li>
 		<li>아이템5</li>
 	</ul>
-	
+
 </body>
 </html>

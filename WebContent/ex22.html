@@ -5,11 +5,26 @@
 <script type="text/javascript" src="./jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
 	$( function() {
+		var html = "<strong>카타파하</strong>";
+
+		//2초 후 function 실행 (milisecond) -> 한 번밖에 못쓴다
+//		setTimeout(function(){		$("#p1").append(html);},2000);
+//		setInterval(function(){$("#p1").append(html);},2000);
+		var count=0;
+		var intervalId= setInterval(function(){
+			if(count>=4){
+				clearInterval(intervalId);
+				return;
+			}
+			$("#p1").append(html);
+			count++;
+		},2000)
+		
 		/* 코드를 완성하세요 */
 	} );  
 </script>
 </head>
 <body>
-<p id="p1">마바사아자차카타파하</p>
+<p id="p1">가나다라마바사아자차</p>
 </body>
 </html>

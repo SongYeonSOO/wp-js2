@@ -10,6 +10,11 @@
 		<script type="text/javascript">
 		$(function(){
 			$("li > strong").css("color","red");
+			
+			
+			// 다음 둘은 같은 방법 -> 더 빠른걸 이용하도록 하자!
+//			$("li > div > strong").css("color","red");
+			$("div > strong").css("color","red");
 		});
 		</script>
 	</head>

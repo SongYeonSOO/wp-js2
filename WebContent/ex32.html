@@ -6,6 +6,13 @@
 <script type="text/javascript">
 	$( function() {
 		/* 코드를 완성하세요 */
+		setTimeout(function() {
+			// 내용을 바꾸려고 그냥 태그로 해버리면 content 내용까지 지워짐
+			// $("p").replaceWith("<h1>");
+			
+			// 내용까지 변경해보자!
+			$("p").replaceWith("<h1> 변경 후 </h1>");
+		}, 2000);
 	} );  
 </script>
 </head>

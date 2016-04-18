@@ -6,12 +6,39 @@
 <script type="text/javascript">
 	$( function() {
 		/* 코드를 완성하세요 */
+		setTimeout(function() {
+			// 지금 링크 위치도 맘에안듬
+			// title도 맘에안듬
+			// 동적으로 바뀌도록 해보자!
+			// 일반적인방법
+/* 			var $anchor = $("h1 a");
+			$anchor.attr("href","http://estsoft.com");
+			$anchor.attr("title","우리회사 홈페이지 가기"); */
+			
+			//+ ftn chain ~ 종류가 여러가지인 함수를 부를 때는 ftn chain을 쓰는게 좋을듯
+			//  $anchor.attr("href","http://estsoft.com").attr("title","우리회사 홈페이지 가기");
+			//	$("h1 a").attr("href","http://estsoft.com").attr("title","우리회사 홈페이지 가기");
+			
+			//객체를 사용한 attr API 함수 호출
+			//여기서도 chain 가능
+			$("h1 a").attr({"href":"http://estsoft.com", "title":"우리회사 홈페이지 가기", "target":"_blank"});
+			
+			
+			$("h1").css({"fontSize": "1.2em", "fontFamily":"맑은고딕"});
+			
+			//textDecoration : text underline
+			$("a:link, a:visited, a:active, a:hover").css({"color": "#333", "textDecoration":"none"});
+			
+			// css check
+			console.log($("h1").css("fontSize"));
+		}, 2000);
+		// 2초뒤에 바뀜
 } );  
 </script>
 </head>
 <body>
 
-<h1><a href="http://www.smu.ac.kr" target="_blnk" title="우리학교 홈페이지 가기">홈페이지 가기</a></h1>
+<h1><a href="http://www.smu.ac.kr" title="우리학교 홈페이지 가기">홈페이지 가기</a></h1>
 
 </body>
 </html>

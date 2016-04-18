@@ -6,7 +6,14 @@
 <script type="text/javascript">
 	$( function() {
 		/* 코드를 완성하세요 */
-
+		setTimeout(function() {
+			// 이 두 태그들을 하나의 태그로 감싼다
+			$("strong, p").wrapAll("<div>");
+			//두 개 이상이면 객체로 감싼다
+			$("div").css({"border": "1px solid #aaa", "padding":"10px"});
+			//하나만 setting할 땐 그냥 {} 없이 쓴다
+			// $("div").css("border", "1px solid #aaa");
+		}, 2000);
 		
 	} );  
 </script>
@@ -14,8 +21,8 @@
 <body>
 
 
-<strong>타이틀입니다.</strong>
-<p>내용입니다.</p>
+	<strong>타이틀입니다.</strong>
+	<p>내용입니다.</p>
 
 </body>
 </html>
